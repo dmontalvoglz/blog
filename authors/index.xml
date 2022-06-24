@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on dmontalvoglz</title>
-    <link>daniel-montalvo.com/authors/</link>
+    <link>https://daniel-montalvo.com/authors/</link>
     <description>Recent content in Authors on dmontalvoglz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="daniel-montalvo.com/authors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://daniel-montalvo.com/authors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Daniel Montalvo</title>
-      <link>daniel-montalvo.com/authors/daniel-montalvo/</link>
+      <link>https://daniel-montalvo.com/authors/daniel-montalvo/</link>
       <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>daniel-montalvo.com/authors/daniel-montalvo/</guid>
+      <guid>https://daniel-montalvo.com/authors/daniel-montalvo/</guid>
       <description></description>
     </item>
     
