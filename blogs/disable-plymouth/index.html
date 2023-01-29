@@ -28,14 +28,16 @@
 
 
 
-<meta property="og:title" content="Linux" />
-<meta property="og:description" content="Daniel Montalvo personal blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://daniel-montalvo.com/tags/linux/" /><meta property="og:site_name" content="Daniel Montalvo" />
+<meta property="og:title" content="Disable Plymouth boot screen" />
+<meta property="og:description" content="What is Plymouth booting screen? Usually a fresh install of Ubuntu Linux contains a nice booting screen that hides the process of booting up, as cool as it may look it can hinder the booting time on old computers (you would barely notice it if you are using a high end pc) but also I really like to see the terminal doing the checks on every boot so I always end up disabling this feature." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://daniel-montalvo.com/blogs/disable-plymouth/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2023-01-28T23:29:21+05:30" />
+<meta property="article:modified_time" content="2023-01-28T23:29:21+05:30" /><meta property="og:site_name" content="Daniel Montalvo" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux"/>
-<meta name="twitter:description" content="Daniel Montalvo personal blog"/>
+<meta name="twitter:title" content="Disable Plymouth boot screen"/>
+<meta name="twitter:description" content="What is Plymouth booting screen? Usually a fresh install of Ubuntu Linux contains a nice booting screen that hides the process of booting up, as cool as it may look it can hinder the booting time on old computers (you would barely notice it if you are using a high end pc) but also I really like to see the terminal doing the checks on every boot so I always end up disabling this feature."/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -99,11 +101,14 @@
     }
 </style>
 
-<meta name="description" content="Linux of Daniel Montalvo">
-<link rel="stylesheet" href="/css/list.css" media="all">
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-5/all-5.15.4.js"></script>
 
   <title>
-Linux | Daniel Montalvo
+Disable Plymouth boot screen | Daniel Montalvo
 
   </title>
 </head>
@@ -221,43 +226,138 @@ Linux | Daniel Montalvo
     </nav>
 </header>
 <div id="content">
-<div class="container pt-5" id="list-page">
-    <h2 class="text-center pb-2">Linux</h2>
-    <div class="row">
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-header">
-                        <a href="/blogs/disable-plymouth/">
-                            <img src="/images/posts/linux_plymouth.jpg" class="card-img-top" alt="Disable Plymouth boot screen">
-                        </a>
-                    </div>
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/disable-plymouth/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Disable Plymouth boot screen">Disable Plymouth boot …</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p>What is Plymouth booting screen? Usually a fresh install of Ubuntu Linux contains a nice booting screen that hides the process of booting up, as cool as it may look it can hinder the booting time on old computers (you would barely notice it if you are using a high end pc) but also I really like to …</p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">January 28, 2023</span>
-                        <a href="/blogs/disable-plymouth/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                    </div>
-                </div>
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Disable Plymouth boot screen</h1>
+            <div class="text-center">
+              Daniel Montalvo 
+              <small>|</small>
+              Jan 28, 2023
+
+              
             </div>
+          </div>
+          
+          <div class="featured-image" align="center">
+            <img class="img-fluid" src="/images/posts/linux_plymouth.jpg" alt="Disable Plymouth boot screen">
+          </div>
+          
+          <article class="page-content  p-2">
+          <h2 id="what-is-plymouth-booting-screen">What is Plymouth booting screen?</h2>
+<p>Usually a fresh install of Ubuntu Linux contains a nice booting screen that hides the process of booting up, as cool as it may look it can hinder the booting time on old computers (you would barely notice it if you are using a high end pc) but also I really like to see the terminal doing the checks on every boot so I always end up disabling this feature.</p>
+<h2 id="1-first-edit-the-grub-configuration">1. First edit the grub configuration</h2>
+<p>Open the terminal and navigate to <code>/etc/default/grub</code>, I will be using nano since it is installed by default.</p>
+<pre tabindex="0"><code>sudo nano /etc/default/grub
+</code></pre><p>There youll find for the next line:</p>
+<pre tabindex="0"><code>GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet splash&#34;
+</code></pre><p>You should replace the “quiet splash” for “quiet”:</p>
+<pre tabindex="0"><code>GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet&#34;
+</code></pre><p>If using nano the next step would be to press <code>ctrl + x</code> to close the file, it will ask us to save the changes so we are going to hit <code>enter</code>.</p>
+<h2 id="2-updating-the-grub">2. Updating the grub</h2>
+<p>Now that you have made the change is time to update the grub, the changes we just made won’t have any effect if we don’t do this step on the terminal write the following command:</p>
+<pre tabindex="0"><code>sudo update-grub
+</code></pre><p>after this you should be ready to go.</p>
+<h2 id="ps">P.S:</h2>
+<p>This is good enough to get rid of the booting screen, I <code>DO NOT</code> recommend to uninstall plymouth since it can (and possibly will) cause dependency problems with other parts of Ubuntu/Linux.</p>
+
+          </article>
         </div>
-        
-        <div class="row justify-content-center">
-            <div class="col-auto m-3">
-                
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-plymouth-booting-screen">What is Plymouth booting screen?</a></li>
+    <li><a href="#1-first-edit-the-grub-configuration">1. First edit the grub configuration</a></li>
+    <li><a href="#2-updating-the-grub">2. Updating the grub</a></li>
+    <li><a href="#ps">P.S:</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="https://daniel-montalvo.com/tags/linux" target="_blank">Linux</a></li>
+              
+              <li class="list-inline-item"><a href="https://daniel-montalvo.com/tags/ubuntu" target="_blank">Ubuntu</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Disable%20Plymouth%20boot%20screen&url=https%3a%2f%2fdaniel-montalvo.com%2fblogs%2fdisable-plymouth%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Disable%20Plymouth%20boot%20screen: https%3a%2f%2fdaniel-montalvo.com%2fblogs%2fdisable-plymouth%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="mailto:?subject=Disable%20Plymouth%20boot%20screen&amp;body=Check out this site https%3a%2f%2fdaniel-montalvo.com%2fblogs%2fdisable-plymouth%2f">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
+          </aside>
+          
         </div>
+      </div>
     </div>
-</div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+
 
   </div><footer>
     <div class="text-center pt-2">

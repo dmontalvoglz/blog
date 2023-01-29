@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 28 Jan 2023 23:29:21 +0530</lastBuildDate><atom:link href="https://daniel-montalvo.com/blogs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Disable Plymouth boot screen</title>
-      <link>https://daniel-montalvo.com/blogs/markdown-syntax/</link>
+      <link>https://daniel-montalvo.com/blogs/disable-plymouth/</link>
       <pubDate>Sat, 28 Jan 2023 23:29:21 +0530</pubDate>
       
-      <guid>https://daniel-montalvo.com/blogs/markdown-syntax/</guid>
+      <guid>https://daniel-montalvo.com/blogs/disable-plymouth/</guid>
       <description>What is Plymouth booting screen? Usually a fresh install of Ubuntu Linux contains a nice booting screen that hides the process of booting up, as cool as it may look it can hinder the booting time on old computers (you would barely notice it if you are using a high end pc) but also I really like to see the terminal doing the checks on every boot so I always end up disabling this feature.</description>
     </item>
     
